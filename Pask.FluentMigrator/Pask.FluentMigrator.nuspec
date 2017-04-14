@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$id$</title>
+    <authors>Luca Sgroi</authors>
+    <owners>Luca Sgroi</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
+    <licenseUrl>https://github.com/lsgroi/Pask.FluentMigrator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/lsgroi/Pask.FluentMigrator</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/lsgroi/Pask/master/Pask.png</iconUrl>
+    <summary>Pask extension that provides database migration functionality using FluentMigrator.</summary>
+    <description>Pask extension that provides database migration functionality using FluentMigrator.</description>
+    <tags>PowerShell Build Automation Script Invoke-Build FluentMigrator Pask</tags>
+    <copyright>Copyright © 2017 Luca Sgroi under the Apache License</copyright>
+    <releaseNotes>https://github.com/lsgroi/Pask.FluentMigrator/releases</releaseNotes>
+    <dependencies>
+      <dependency id="Pask" version="0.25.1" />
+      <dependency id="FluentMigrator" version="1.6.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="scripts\*.ps1" target="scripts" exclude="scripts\*.Tests.ps1" />
+    <file src="tasks\*.ps1" target="tasks" exclude="tasks\*.Tests.ps1" />
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pask.FluentMigrator", "Pask.FluentMigrator\Pask.FluentMigrator.csproj", "{17E7AAEC-FF77-4CE8-9EF5-54446BC61071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6377CB0-4C13-4B9F-9CAB-E1D8841465A4}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ADC51F76-FECA-4380-82AD-4131E4AF82FE}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{4573FE5C-AFF8-4D9D-A9A1-6262F3F67254}"
+	ProjectSection(SolutionItems) = preProject
+		.build\build.ps1 = .build\build.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tasks", "tasks", "{99A11901-D6B1-4FAA-946B-E06E5A462E71}"
+	ProjectSection(SolutionItems) = preProject
+		.build\tasks\Test-PackageInstallation.ps1 = .build\tasks\Test-PackageInstallation.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{59F717E5-B4E3-4828-9146-F1E91C6E3DA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E7AAEC-FF77-4CE8-9EF5-54446BC61071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E7AAEC-FF77-4CE8-9EF5-54446BC61071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E7AAEC-FF77-4CE8-9EF5-54446BC61071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E7AAEC-FF77-4CE8-9EF5-54446BC61071}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99A11901-D6B1-4FAA-946B-E06E5A462E71} = {4573FE5C-AFF8-4D9D-A9A1-6262F3F67254}
+		{59F717E5-B4E3-4828-9146-F1E91C6E3DA9} = {4573FE5C-AFF8-4D9D-A9A1-6262F3F67254}
+	EndGlobalSection
+EndGlobal
