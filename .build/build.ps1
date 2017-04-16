@@ -3,6 +3,10 @@ Set-Property GitHubRepo -Value $ProjectName
 
 Import-Task Clean, Pack-Nuspec, Test-Pester, Push-Local, Version-BuildServer, Push, Test-PackageInstallation, New-GitHubRelease
 
+Enter-Build {
+    Restore-NuGetPackages
+}
+
 # Synopsis: Default task
 Task . Clean, Pack-Nuspec, Test, Push-Local
 
