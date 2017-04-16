@@ -1,4 +1,4 @@
-Import-Task Restore-NuGetPackages, Clean, Build, Migrate, New-Artifact, Zip-Artifact, Extract-Artifact, MigrateFrom-Artifact
+Import-Task Restore-NuGetPackages, Clean, Build, Migrate, Rollback, New-Artifact, Zip-Artifact, Extract-Artifact, MigrateFrom-Artifact, RollbackFrom-Artifact
 
 # Synopsis: Default task
 Task . Restore-NuGetPackages, Clean, Build

@@ -1,0 +1,2 @@
+﻿Set-Property MigrationAssemblyFullPath -Default { Get-ProjectBuildOutputDir $MigrationProjectName }
+Set-Property MigrationAssemblyFullName -Default { if ($MigrationAssemblyFullPath) { Join-Path $MigrationAssemblyFullPath "$MigrationProjectName.dll" } }
