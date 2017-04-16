@@ -51,6 +51,11 @@
     <None Include="Pask.FluentMigrator.nuspec" />
     <None Include="scripts\Properties.MigrationAssembly.ps1" />
     <None Include="scripts\Properties.ps1" />
+    <None Include="tasks\MigrateFrom-Package.Tests.ps1" />
+    <None Include="tasks\MigrateFrom-Package.ps1" />
+    <None Include="tasks\RollbackFrom-Package.Tests.ps1" />
+    <None Include="tasks\RollbackFrom-Package.ps1" />
+    <None Include="tasks\RollbackFrom-Artifact.Tests.ps1" />
     <None Include="tasks\Rollback.Tests.ps1" />
     <None Include="tasks\MigrateFrom-Artifact.Tests.ps1" />
     <None Include="tasks\Migrate.Tests.ps1" />

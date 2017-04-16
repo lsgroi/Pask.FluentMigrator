@@ -8,6 +8,8 @@ Task Rollback {
 
     Assert (Test-Path $MigrationAssemblyFullName) "Cannot find the assembly $MigrationAssemblyFullName"
 
+    $FluentMigratorConnectionString = property MigrationConnectionString
+
     $FluentMigratorTask = "--task=rollback"
 
     if ($RollbackSteps -and $RollbackSteps -ge 0) {
@@ -25,5 +27,5 @@ Task Rollback {
 
     $MigrationTag -split ',' | ForEach { $FluentMigratorTag += @("--tag=""$_""") }
 
-    Exec { & "$FluentMigratorRunner" --timeout=$MigrationTimeout $FluentMigratorTask $FluentMigratorSteps $FluentMigratorVersion --connectionString="$MigrationConnectionString" --db="$MigrationDatabase" --namespace="$MigrationNamespace" --target="$MigrationAssemblyFullName" --profile="$MigrationProfile" $FluentMigratorTag }
+    Exec { & "$FluentMigratorRunner" --timeout="$MigrationTimeout" $FluentMigratorTask $FluentMigratorSteps $FluentMigratorVersion --connectionString="$FluentMigratorConnectionString" --db="$MigrationDatabase" --namespace="$MigrationNamespace" --target="$MigrationAssemblyFullName" --profile="$MigrationProfile" $FluentMigratorTag }
 }

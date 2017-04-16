@@ -9,6 +9,12 @@ Describe "Rollback" {
         Add-Type -Path (Join-Path (Get-PackageDir "System.Data.SQLite.Core") "lib\net46\System.Data.SQLite.dll")
     }
 
+    Context "Rollback without connection string" {
+        It "should error" {
+            { Invoke-Pask $TestSolutionFullPath -Task Restore-NuGetPackages, Clean, Build, Rollback -ProjectName ClassLibrary.DatabaseMigrations } | Should Throw
+        }
+    }
+
     Context "Default rollback" {
         BeforeAll {
             # Arrange

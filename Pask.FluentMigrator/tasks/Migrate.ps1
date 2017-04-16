@@ -6,9 +6,11 @@ Task Migrate {
 
     Assert (Test-Path $MigrationAssemblyFullName) "Cannot find the assembly $MigrationAssemblyFullName"
 
+    $FluentMigratorConnectionString = property MigrationConnectionString
+
     $FluentMigratorRunner = (Join-Path (Get-PackageDir "FluentMigrator") "tools\Migrate.exe")
 
     $MigrationTag -split ',' | ForEach { $FluentMigratorTag += @("--tag=""$_""") }
 
-    Exec { & "$FluentMigratorRunner" --timeout=$MigrationTimeout --connectionString="$MigrationConnectionString" --db="$MigrationDatabase" --namespace="$MigrationNamespace" --target="$MigrationAssemblyFullName" --profile="$MigrationProfile" $FluentMigratorTag }
+    Exec { & "$FluentMigratorRunner" --timeout="$MigrationTimeout" --connectionString="$FluentMigratorConnectionString" --db="$MigrationDatabase" --namespace="$MigrationNamespace" --target="$MigrationAssemblyFullName" --profile="$MigrationProfile" $FluentMigratorTag }
 }

@@ -9,6 +9,12 @@ Describe "Migrate" {
         Add-Type -Path (Join-Path (Get-PackageDir "System.Data.SQLite.Core") "lib\net46\System.Data.SQLite.dll")
     }
 
+    Context "Migrate without connection string" {
+        It "should error" {
+            { Invoke-Pask $TestSolutionFullPath -Task Restore-NuGetPackages, Clean, Build, Migrate -ProjectName ClassLibrary.DatabaseMigrations } | Should Throw
+        }
+    }
+
     Context "Migration from default project" {
         BeforeAll {
             # Arrange
