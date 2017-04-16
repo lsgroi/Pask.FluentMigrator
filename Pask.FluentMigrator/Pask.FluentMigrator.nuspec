@@ -13,7 +13,7 @@
     <iconUrl>https://raw.githubusercontent.com/lsgroi/Pask/master/Pask.png</iconUrl>
     <summary>Pask extension that provides database migration functionality using FluentMigrator.</summary>
     <description>Pask extension that provides database migration functionality using FluentMigrator.</description>
-    <tags>PowerShell Build Automation Script Invoke-Build FluentMigrator Pask</tags>
+    <tags>PowerShell Build Automation Script Invoke-Build FluentMigrator</tags>
     <copyright>Copyright © 2017 Luca Sgroi under the Apache License</copyright>
     <releaseNotes>https://github.com/lsgroi/Pask.FluentMigrator/releases</releaseNotes>
     <dependencies>
