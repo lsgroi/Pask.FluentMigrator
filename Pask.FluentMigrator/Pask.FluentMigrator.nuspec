@@ -17,7 +17,7 @@
     <copyright>Copyright © 2017 Luca Sgroi under the Apache License</copyright>
     <releaseNotes>https://github.com/lsgroi/Pask.FluentMigrator/releases</releaseNotes>
     <dependencies>
-      <dependency id="Pask" version="0.25.1" />
+      <dependency id="Pask" version="0.25.3" />
       <dependency id="FluentMigrator" version="1.6.2" />
     </dependencies>
   </metadata>
