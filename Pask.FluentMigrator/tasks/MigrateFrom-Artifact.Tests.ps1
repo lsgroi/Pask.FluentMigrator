@@ -21,7 +21,10 @@ Describe "MigrateFrom-Artifact" {
 
             # Act
             Invoke-Pask $TestSolutionFullPath -Task Restore-NuGetPackages, Clean, Build, New-Artifact -ProjectName ClassLibrary.DatabaseMigrations
-            (Join-Path $TestSolutionFullPath "**\bin"), (Join-Path $TestSolutionFullPath "**\obj") | Remove-ItemSilently
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\bin")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
             Invoke-Pask $TestSolutionFullPath -Task MigrateFrom-Artifact -ProjectName ClassLibrary.DatabaseMigrations -MigrationDatabase "SQLite" -MigrationConnectionString $Connection.ConnectionString
         }
 

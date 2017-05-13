@@ -21,7 +21,11 @@ Describe "RollbackFrom-Package" {
 
             # Act
             Invoke-Pask $TestSolutionFullPath -Task Restore-NuGetPackages, Clean, Build, Migrate, New-Artifact, Zip-Artifact -ProjectName ClassLibrary.DatabaseMigrations -MigrationDatabase "SQLite" -MigrationConnectionString $Connection.ConnectionString
-            (Join-Path $TestSolutionFullPath "**\bin"), (Join-Path $TestSolutionFullPath "**\obj"), (Join-Path $TestSolutionFullPath ".build\output\ClassLibrary.DatabaseMigrations") | Remove-ItemSilently
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\bin")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath ".build\output\ClassLibrary.DatabaseMigrations")
             Invoke-Pask $TestSolutionFullPath -Task RollbackFrom-Package -ProjectName ClassLibrary.DatabaseMigrations -MigrationDatabase "SQLite" -MigrationConnectionString $Connection.ConnectionString
         }
 

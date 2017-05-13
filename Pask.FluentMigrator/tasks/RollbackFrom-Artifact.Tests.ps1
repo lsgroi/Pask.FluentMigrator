@@ -21,7 +21,10 @@ Describe "RollbackFrom-Artifact" {
 
             # Act
             Invoke-Pask $TestSolutionFullPath -Task Restore-NuGetPackages, Clean, Build, Migrate, New-Artifact -ProjectName ClassLibrary.DatabaseMigrations -MigrationDatabase "SQLite" -MigrationConnectionString $Connection.ConnectionString
-            (Join-Path $TestSolutionFullPath "**\bin"), (Join-Path $TestSolutionFullPath "**\obj") | Remove-ItemSilently
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\bin")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
+            Remove-PaskItem (Join-Path $TestSolutionFullPath "ClassLibrary.DatabaseMigrations\obj")
             Invoke-Pask $TestSolutionFullPath -Task RollbackFrom-Artifact -ProjectName ClassLibrary.DatabaseMigrations -MigrationDatabase "SQLite" -MigrationConnectionString $Connection.ConnectionString
         }
 
